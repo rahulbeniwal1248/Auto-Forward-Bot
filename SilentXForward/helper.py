@@ -124,18 +124,13 @@ def build_filter_keyboard(settings):
     rows = [
         ("🏷 Forward tag", "forward_tag"),
         ("🖍 Texts", "texts"),
-        ("🔗 Links", "links"),
         ("📁 Documents", "documents"),
         ("🎞 Videos", "videos"),
-        ("📹 Video notes", "video_notes"),
         ("📷 Photos", "photos"),
         ("🎧 Audios", "audios"),
         ("🎙 Voices", "voices"),
         ("🎭 Animations", "animations"),
         ("🃏 Stickers", "stickers"),
-        ("📊 Polls", "polls"),
-        ("👤 Contacts", "contacts"),
-        ("📍 Locations", "locations"),
         ("▶️ Skip duplicate", "skip_duplicate"),
     ]
 

@@ -38,15 +38,11 @@ def get_forward_runtime_stats() -> dict:
 
 def _message_type(message):
     if message.text:
-        if message.entities and any(str(getattr(ent, "type", "")).lower() in ("url", "text_link", "messageentitytype.url", "messageentitytype.text_link") for ent in message.entities):
-            return "links"
         return "texts"
     if message.document:
         return "documents"
     if message.video:
         return "videos"
-    if message.video_note:
-        return "video_notes"
     if message.photo:
         return "photos"
     if message.audio:
@@ -57,12 +53,6 @@ def _message_type(message):
         return "animations"
     if message.sticker:
         return "stickers"
-    if message.poll:
-        return "polls"
-    if message.contact:
-        return "contacts"
-    if message.location or message.venue:
-        return "locations"
     return "texts"
 
 
@@ -71,8 +61,6 @@ def _message_signature(message):
         return f"doc:{message.document.file_unique_id}"
     if message.video:
         return f"vid:{message.video.file_unique_id}"
-    if message.video_note:
-        return f"vno:{message.video_note.file_unique_id}"
     if message.photo:
         return f"pho:{message.photo.file_unique_id}"
     if message.audio:
@@ -83,14 +71,6 @@ def _message_signature(message):
         return f"ani:{message.animation.file_unique_id}"
     if message.sticker:
         return f"stk:{message.sticker.file_unique_id}"
-    if message.poll:
-        return f"pol:{getattr(message.poll, 'id', message.id)}"
-    if message.contact:
-        return f"con:{message.contact.phone_number}:{message.contact.first_name}"
-    if message.location:
-        return f"loc:{message.location.latitude}:{message.location.longitude}"
-    if message.venue:
-        return f"ven:{message.venue.latitude}:{message.venue.longitude}:{message.venue.title}"
     if message.text:
         return f"txt:{message.text.strip()}"
     return f"msg:{message.chat.id}:{message.id}"

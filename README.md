@@ -15,7 +15,7 @@ A Powerful And Efficient Telegram Bot Designed To Forward All Telegram Message T
 - **Smart Delivery**: Single posts are forwarded immediately while albums are grouped to preserve order.
 - **Retry & FloodWait Handling**: Automatic retry with bounded queue retries to avoid infinite loops.
 - **Keep-Alive**: Built-In Web Server To Keep The Bot Running On Platform Like Heroku/Koyeb.
-- **Interactive Settings Panel**: `/settings` now opens inline buttons for advanced configuration and message-type filters (texts, links, documents, videos, video notes, photos, audios, voices, animations, stickers, polls, contacts, locations).
+- **Interactive Settings Panel**: `/settings` now opens inline buttons for advanced configuration and message-type filters.
 
 ## Configuration
 
