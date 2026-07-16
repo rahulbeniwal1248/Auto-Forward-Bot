@@ -16,6 +16,7 @@ A Powerful And Efficient Telegram Bot Designed To Forward All Telegram Message T
 - **Retry & FloodWait Handling**: Automatic retry with bounded queue retries to avoid infinite loops.
 - **Keep-Alive**: Built-In Web Server To Keep The Bot Running On Platform Like Heroku/Koyeb.
 - **Interactive Settings Panel**: `/settings` now opens inline buttons for advanced configuration and message-type filters (texts, links, documents, videos, video notes, photos, audios, voices, animations, stickers, polls, contacts, locations), plus `fast_mode`, `stream_mode`, and `link_buttons` (STREAM/DOWNLOAD buttons) toggles.
+- **User Session Forwarding**: Supports `USER_SESSION_STRING`, `SESSION_STRING`, or `BOT_SESSION` for logging in with a Pyrogram user session so private/restricted Telegram sources can be forwarded through the userbot fallback.
 
 ## Configuration
 
@@ -35,6 +36,8 @@ The Bot Is Configured Using .
 | `APP_URL` | URL Of Your Deployed App (Used For Self-Pinning To Keep Awake). | Optional | `None` |
 | `OWNER_ID` | Telegram user id allowed to use owner-only commands. | Optional | `0` |
 | `USER_SESSION_STRING` | Optional Pyrogram user session string for private/restricted source forwarding fallback. If not set, bot also tries saved DB session added from `/addusersession`. | Optional | `""` |
+| `SESSION_STRING` | Alias for `USER_SESSION_STRING` for Telegram user login forwarding. | Optional | `""` |
+| `BOT_SESSION` | Alias for `USER_SESSION_STRING` for deployments that already use this variable name. | Optional | `""` |
 
 
 
@@ -105,8 +108,8 @@ The Bot Is Configured Using .
    export API_ID=your_api_id
    export API_HASH=your_api_hash
    export BOT_TOKEN=your_bot_token
-   export SOURCE_CHANNELS="-10012345678, -10087654321"
-   export TARGET_CHANNELS="-10011223344, -10055667788"
+   export MONGO_URI=your_mongodb_uri
+   export USER_SESSION_STRING=your_pyrogram_user_session  # optional; SESSION_STRING/BOT_SESSION also work
    ```
 
 4. **Run the bot:**

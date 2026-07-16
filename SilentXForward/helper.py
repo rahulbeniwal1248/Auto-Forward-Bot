@@ -789,7 +789,8 @@ async def set_channels(client, message: Message):
 
 @Client.on_message(filters.private & filters.text & ~filters.command([
     "start", "help", "commands", "about", "forward", "oldforward", "unequify", "settings", "status", "cancel", "reset", "donate",
-    "resetall", "broadcast", "pauseforward", "resumeforward", "stats", "restart", "set", "remove_target", "remove_source", "list", "clear"
+    "resetall", "broadcast", "pauseforward", "resumeforward", "stats", "restart", "addusersession", "addbottoken",
+    "accounts", "set", "remove_target", "remove_source", "list", "clear"
 ]))
 async def forward_wizard_input(client, message: Message):
     user_id = message.from_user.id
