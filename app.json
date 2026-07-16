@@ -21,17 +21,25 @@
       "description": "Get This Value From @BotFather",
       "required": true
     },
-    "SOURCE_CHANNELS": {
-      "description": "Space Or Comma Separated List Of Source Channel IDs",
-      "required": true
-    },
-    "TARGET_CHANNELS": {
-      "description": "Space Or Comma Separated List Of Target Channel IDs",
-      "required": true
-    },
     "WEB_SERVER": {
       "description": "Enable Web Server For Keep-Alive",
       "value": "True",
+      "required": false
+    },
+    "BOT_SESSION": {
+      "description": "Optional alias for USER_SESSION_STRING. Add a Pyrogram user session string to forward from private/restricted Telegram chats.",
+      "required": false
+    },
+    "USER_SESSION_STRING": {
+      "description": "Optional Pyrogram user session string for forwarding from private/restricted Telegram chats. SESSION_STRING and BOT_SESSION are also accepted as aliases.",
+      "required": false
+    },
+    "MONGO_URI": {
+      "description": "MongoDB connection URI used to store mappings, settings, and saved sessions.",
+      "required": true
+    },
+    "SESSION_STRING": {
+      "description": "Optional alias for USER_SESSION_STRING. Add a Pyrogram user session string to forward from private/restricted Telegram chats.",
       "required": false
     }
   },
